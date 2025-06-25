@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Input Output</title>
+</head>
+<body>
+  <script>
+    let scoreInput = prompt("Enter your score (0–100):");
+    let score = Number(scoreInput);
+
+    console.log("Entered Score: " + score);
+
+    if (score >= 90 && score <= 100) {
+    console.log("Remark: Excellent");
+    alert("Excellent");
+    } else if (score >= 80 && score <= 89) {
+    console.log("Remark: Very Good");
+    alert("Very Good");
+    } else if (score >= 70 && score <= 79) {
+    console.log("Remark: Good");
+    alert("Good");
+    } else if (score >= 60 && score <= 69) {
+    console.log("Remark: Pass");
+    alert("Pass");
+    } else if (score >= 0 && score < 60) {
+    console.log("Remark: Fail");
+    alert("Fail");
+    } else {
+    console.log("Invalid score entered");
+    alert("Please enter a valid score between 0 and 100.");
+    }
+  </script>
+</body>
+</html>

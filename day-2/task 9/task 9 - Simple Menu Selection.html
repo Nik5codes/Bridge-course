@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Input Output</title>
+</head>
+<body>
+  <script>
+    let choiceInput = prompt("Choose an option:\n1 = Check Balance\n2 = Withdraw\n3 = Deposit\n4 = Exit");
+    let choice = Number(choiceInput);
+
+    console.log("User selected: " + choice);
+
+    switch (choice) {
+    case 1:
+        console.log("Action: Check Balance");
+        alert("You chose to Check Balance.");
+        break;
+    case 2:
+        console.log("Action: Withdraw");
+        alert("You chose to Withdraw.");
+        break;
+    case 3:
+        console.log("Action: Deposit");
+        alert("You chose to Deposit.");
+        break;
+    case 4:
+        console.log("Action: Exit");
+        alert("You chose to Exit.");
+        break;
+    default:
+        console.log("Action: Invalid selection");
+        alert("Invalid option. Please choose 1 to 4.");
+    }
+  </script>
+</body>
+</html>
