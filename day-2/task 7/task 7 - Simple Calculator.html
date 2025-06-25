@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Input Output</title>
+</head>
+<body>
+  <script>
+    let input1 = prompt("Enter first number:");
+    let input2 = prompt("Enter second number:");
+    let operator = prompt("Enter operator (+, -, *, /):");
+    let num1 = Number(input1);
+    let num2 = Number(input2);
+    console.log("First Number: " + num1);
+    console.log("Second Number: " + num2);
+    console.log("Operator: " + operator);
+    if (operator === "+") {
+    let result = num1 + num2;
+    console.log("Result: " + result);
+    alert("Result: " + result);
+    } else if (operator === "-") {
+    let result = num1 - num2;
+    console.log("Result: " + result);
+    alert("Result: " + result);
+    } else if (operator === "*") {
+    let result = num1 * num2;
+    console.log("Result: " + result);
+    alert("Result: " + result);
+    } else if (operator === "/") {
+    if (num2 === 0) {
+        console.log("Error: Division by zero");
+        alert("Error: Division by zero");
+    } else {
+        let result = num1 / num2;
+        console.log("Result: " + result);
+        alert("Result: " + result);
+    }
+    } else {
+    console.log("Invalid operator");
+    alert("Invalid operator");
+    }
+  </script>
+</body>
+</html>

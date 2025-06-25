@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Input Output</title>
+</head>
+<body>
+  <script>
+    let input = prompt("Enter a number:");
+    let num = Number(input);
+
+    console.log("Entered Number: " + num);
+
+    if (num > 10 && num < 20) {
+    console.log("Number is between 10 and 20");
+    alert("Number is between 10 and 20");
+    } else {
+    console.log("Number is NOT between 10 and 20");
+    alert("Number is NOT between 10 and 20");
+    }
+
+    if (num < 5 || num > 100) {
+    console.log("Number is either less than 5 or greater than 100");
+    alert("Number is either less than 5 or greater than 100");
+    } else {
+    console.log("Number is NOT less than 5 or greater than 100");
+    alert("Number is NOT less than 5 or greater than 100");
+    }
+  </script>
+</body>
+</html>
