@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Input Output</title>
+</head>
+<body>
+  <script>
+    let ageInput = prompt("Enter your age:");
+    let age = Number(ageInput);
+
+    let studentInput = prompt("Are you a student? (yes/no):");
+    let isStudent = studentInput.toLowerCase() === "yes";
+
+    console.log("Age: " + age);
+    console.log("Is Student: " + isStudent);
+
+    let price;
+
+    if (age < 5 || age > 65) {
+    price = 5;
+    } else if (age >= 5 && age <= 18 && isStudent) {
+    price = 8;
+    } else {
+    price = 12;
+    }
+
+    console.log("Ticket Price: $" + price);
+    alert("Your movie ticket price is $" + price);
+  </script>
+</body>
+</html>
