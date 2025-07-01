@@ -23,5 +23,6 @@ public class Book {
 
         b1.closeBook();
         System.out.println("Book is open: " + b1.isOpen);
+        
     }
 }
