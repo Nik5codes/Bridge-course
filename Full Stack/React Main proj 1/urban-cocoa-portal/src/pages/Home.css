@@ -1,0 +1,35 @@
+.home {
+  text-align: center;
+}
+
+.hero {
+  /* background: url("https://cdn.shopify.com/s/files/1/0090/0254/9307/files/dark-chocolate-benefit_1024x1024.png?v=1720527235") 
+              no-repeat center center/cover; */
+  background: linear-gradient(to right, #472207, #783617, #a15b00);
+  color: rgb(255, 255, 255);
+  padding: 243.5px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #5a2e0c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  background: #7b3f00;
+  transform: scale(1.05);
+}

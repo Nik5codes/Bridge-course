@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 30px;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease-in-out, background-color 0.5s ease;
+            color: black;
+        }
+
+        body.dark {
+            background-color: #1c1c1c;
+            color: white;
+            background-image: none;
+        }
+
+        body.sunny {
+            background-image: url('https://www.bpmcdn.com/f/files/mission/import/2021-04/24809959_web1_Sky-Blue-White-Sunny-Day-Sunny-Summer-Day-Clouds-1117586.jpg;w=960');
+        }
+
+        body.cloudy {
+            background-image: url('https://www.rochesterfirst.com/wp-content/uploads/sites/66/2021/04/sky-1107579_1920.jpg?w=1280');
+        }
+
+        body.rainy {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiwzSVsS4B-LiWZxSZMUK9PamGDmmleRgvAA&s');
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 8px;
+            border: 2px solid red;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        body.dark input {
+            background-color: #333;
+            color: white;
+            border-color: #f88;
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        #toggle-theme {
+            margin-bottom: 20px;
+            background-color: gray;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        body.dark #toggle-theme {
+            background-color: lightgray;
+            color: black;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="toggle-theme">Switch to Dark Mode</button>
+
+    <form>
+        <input type="text" name="place" id="place" placeholder="Enter city name">
+        <button type="button" id="button">Search</button>
+    </form>
+
+    <p id="name"></p>
+    <p id="temp"></p>
+    <p id="desc"></p>
+
+    <script>
+        function weather() {
+            var city = document.getElementById('place').value;
+            var name = document.getElementById('name');
+            var temp = document.getElementById('temp');
+            var desc = document.getElementById('desc');
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=40d330e4c1fa734c3a3272bca4cbad3d`)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    name.innerText = data.name;
+                    temp.innerText = data.main.temp + "°C";
+                    const weatherMain = data.weather[0].main;
+                    desc.innerText = weatherMain;
+
+                    // Remove previous background classes
+                    document.body.classList.remove('sunny', 'cloudy', 'rainy');
+
+                    // Add class based on weather
+                    if (weatherMain.toLowerCase().includes('cloud')) {
+                        document.body.classList.add('cloudy');
+                    } else if (weatherMain.toLowerCase().includes('rain')) {
+                        document.body.classList.add('rainy');
+                    } else if (weatherMain.toLowerCase().includes('clear')) {
+                        document.body.classList.add('sunny');
+                    }
+                })
+                .catch(function () {
+                    alert("City not found");
+                });
+        }
+
+        document.getElementById('button').addEventListener('click', weather);
+
+        const toggleBtn = document.getElementById('toggle-theme');
+        toggleBtn.addEventListener('click', function () {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                toggleBtn.textContent = 'Switch to Light Mode';
+            } else {
+                toggleBtn.textContent = 'Switch to Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.a {
+    background-color: rgb(104, 240, 255);
+    border: 15px solid rgb(249, 43, 43);
+    border-radius: 4px;
+    width: 500px;
+    height: 350px;
+    margin-left:  400px;
+}
+
+.b {
+    margin: 20px 60px;
+}
+div{
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function firstTask(){
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log("First Task Done");
+                    resolve(10);
+                },1000)
+            })
+        }
+
+        function secondTask(number){
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log("Second Task Done");
+                    resolve(number * 2);
+                },1000)
+            })
+        }
+
+        function thirdTask(number){
+
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log("Third Task Done");
+                    resolve(number + 5);
+                },1000)
+            })
+        }
+
+        //Promise Chaining
+        // firstTask()
+        // .then((res)=>{
+        //     console.log("first task completed",res);
+        //     return secondTask(res);
+        // })
+
+
+        // .then((res)=>{
+        //     console.log("second task completed",res);
+        //     return thirdTask(res);
+        // })
+
+
+        // .then((res)=>{
+        //     console.log("third task completed",res);
+            
+        // })
+
+        // .catch((err)=>{
+        //     console.log("error");
+        // })
+        async function runpromise() {
+            const res1 = await firstTask();
+            console.log("first task",res1);
+
+            const res2 = await secondTask(res1);
+            console.log("second task",res2);
+
+            const res3 = await thirdTask(res2);
+            console.log("thirdd task",res3);
+        }
+
+        runpromise();
+
+    </script>
+    
+</body>
+</html>

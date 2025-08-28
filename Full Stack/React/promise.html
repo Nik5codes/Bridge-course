@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let promise = new Promise((resolve,reject) => {
+        //     let a = 10;
+        //     if(a===1){
+        //         resolve("promise resolved")
+        //     }
+        //     else{
+        //         reject("promise rejected")
+        //     }
+        // })
+        // console.log(promise);
+
+        // promise.then((resolve) => {
+        //     console.log(resolve);
+        // } )
+
+        // .catch((err) => {console.error("error occured")})
+
+
+
+        function testPromise()
+        {
+            
+            return new Promise((res,rej) => {
+                if(4>3)
+            {
+                res("done");
+            }
+            else{
+                rej("failed")
+            }
+            })
+        }
+
+        let result = testPromise();
+        console.log(result);
+
+
+
+    </script>
+</body>
+</html>

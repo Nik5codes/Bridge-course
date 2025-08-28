@@ -1,0 +1,11 @@
+.cart {
+  padding: 40px;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+
+.cart h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}

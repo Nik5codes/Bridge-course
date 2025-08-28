@@ -1,0 +1,103 @@
+:root {
+  --text-color: #e0e0e0;
+  --background-color: #0b0f14;
+  --accent-color: #00ffe0;
+  --accent-hover: #00c9ff;
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  font-family: var(--font-base);
+  line-height: 1.6;
+  font-weight: 400;
+
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent-hover);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0b0f14, #1a1f2b);
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3.5em;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+}
+
+button {
+  border-radius: 10px;
+  border: 2px solid var(--accent-color);
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: inherit;
+  background-color: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 224, 0.3);
+}
+button:hover {
+  background-color: var(--accent-color);
+  color: #0b0f14;
+  box-shadow: 0 0 20px var(--accent-hover);
+}
+button:focus,
+button:focus-visible {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 4px rgba(0, 201, 255, 0.5);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #1a1a1a;
+    --background-color: #ffffff;
+    --accent-color: #0077ff;
+    --accent-hover: #005fcc;
+  }
+
+  body {
+    background: linear-gradient(135deg, #ffffff, #e3ecf9);
+  }
+
+  h1 {
+    color: var(--accent-color);
+    text-shadow: none;
+  }
+
+  button {
+    color: white;
+    background-color: var(--accent-color);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 119, 255, 0.4);
+  }
+
+  button:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 6px 16px rgba(0, 95, 204, 0.5);
+  }
+}
