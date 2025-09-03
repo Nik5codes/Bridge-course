@@ -1,0 +1,16 @@
+{
+  "name": "test-backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express-validator": "^7.2.1",
+    "supertest": "^7.1.4"
+  }
+}

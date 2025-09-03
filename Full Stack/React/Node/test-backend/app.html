@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const express = require('express');
+        const app = express();
+        app.use(express.json());
+
+        app.get('/api/products/:id',(req,res)=>{
+            res.json([{id:1,name:"laptop"}])
+        });
+        module.exports=app;
+        app.listen(3000,()=>{
+            console.log("server has started on port 3000");
+        })
+    </script>
+</body>
+</html>
